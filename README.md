@@ -29,3 +29,12 @@ plt.show()
 19行目　x軸を「number of glaph」と設定する。
 20行目　y軸を「average」と設定する。
 21行目　グラフを表示する。
+
+[実行方法]
+jupyternotebookでこのページに示すコードを実装する。その際、Macではcontrol+enterで実装可能となる。
+依存ライブラリはnumpy(version 1.16.4)とmatplotlib(version 2.1.1)である。
+
+[参考にしたサイト]
+https://techacademy.jp/magazine/19316　のグラフを描くコードplot()
+http://peaceandhilightandpython.hatenablog.com/entry/2015/12/23/214840　の画像を読み込むコードimread()
+https://www.sejuku.net/blog/67901　の平均値を出力するコードmean()
