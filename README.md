@@ -1,40 +1,91 @@
 # aaa
-im1 = imread('images/1.jpg')
-im2 = imread('images/2.jpg')
-im3 = imread('images/3.jpg')
-im4 = imread('images/4.jpg')
-im5 = imread('images/5.jpg')
+import cv2
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage.io import imread, imsave
+video = cv2.VideoCapture('a.mov')
+dir_name = "screen_caps"
+if not os.path.exists(dir_name):
+    os.mkdir(dir_name)
+frame_count = int(video.get(7))
+for i in range(frame_count):
+    _, frame = video.read()
+    cv2.imwrite(dir_name + "/" +  str(i) + ".png", frame)
 
-ave1 = im1.mean()
-ave2 = im2.mean()
-ave3 = im3.mean()
-ave4 = im4.mean()
-ave5 = im5.mean()
+im0 = imread('screen_caps/0.png')
+im1 = imread('screen_caps/1.png')
+im2 = imread('screen_caps/2.png')
+im3 = imread('screen_caps/3.png')
+im4 = imread('screen_caps/4.png')
+im5 = imread('screen_caps/5.png')
+im6 = imread('screen_caps/6.png')
+im7 = imread('screen_caps/7.png')
+im8 = imread('screen_caps/8.png')
+im9 = imread('screen_caps/9.png')
+im10 = imread('screen_caps/10.png')
+im11 = imread('screen_caps/11.png')
+im12 = imread('screen_caps/12.png')
+im13 = imread('screen_caps/13.png')
+im14 = imread('screen_caps/14.png')
+im15 = imread('screen_caps/15.png')
+im16 = imread('screen_caps/16.png')
+im17 = imread('screen_caps/17.png')
+im18 = imread('screen_caps/18.png')
+im19 = imread('screen_caps/19.png')
+im20 = imread('screen_caps/20.png')
+im21 = imread('screen_caps/21.png')
+im22 = imread('screen_caps/22.png')
+im23 = imread('screen_caps/23.png')
+im24 = imread('screen_caps/24.png')
+im25 = imread('screen_caps/25.png')
+im26 = imread('screen_caps/26.png')
+im27 = imread('screen_caps/27.png')
+im28 = imread('screen_caps/28.png')
+im29 = imread('screen_caps/29.png')
+im30 = imread('screen_caps/30.png')
+im31 = imread('screen_caps/31.png')
+im32 = imread('screen_caps/32.png')
+im33 = imread('screen_caps/33.png')
+im34 = imread('screen_caps/34.png')
+im35 = imread('screen_caps/35.png')
+im36 = imread('screen_caps/36.png')
+im37 = imread('screen_caps/37.png')
+im38 = imread('screen_caps/38.png')
+im39 = imread('screen_caps/39.png')
+im40 = imread('screen_caps/40.png')
+im41 = imread('screen_caps/41.png')
+im42 = imread('screen_caps/42.png')
+im43 = imread('screen_caps/43.png')
+im44 = imread('screen_caps/44.png')
+im45 = imread('screen_caps/45.png')
+im46 = imread('screen_caps/46.png')
+im47 = imread('screen_caps/47.png')
+im48 = imread('screen_caps/48.png')
+im49 = imread('screen_caps/49.png')
 
-x=[1, 2, 3, 4, 5]
-y=[ave1, ave2, ave3, ave4, ave5]
+x = np.arange(0, 50)
+y = [im0.mean(),  im1.mean(),  im2.mean(),  im3.mean(),  im4.mean(),  im5.mean(),  im6.mean(),  im7.mean(),  im8.mean(),  im9.mean(),  im10.mean(),  im11.mean(),  im12.mean(),  im13.mean(),  im14.mean(),  im15.mean(),  im16.mean(),  im17.mean(),  im18.mean(),  im19.mean(),  im20.mean(),  im21.mean(),  im22.mean(),  im23.mean(),  im24.mean(),  im25.mean(),  im26.mean(),  im27.mean(),  im28.mean(),  im29.mean(),  im30.mean(),  im31.mean(),  im32.mean(),  im33.mean(),  im34.mean(),  im35.mean(),  im36.mean(),  im37.mean(),  im38.mean(),  im39.mean(),  im40.mean(),  im41.mean(),  im42.mean(),  im43.mean(),  im44.mean(),  im45.mean(),  im46.mean(),  im47.mean(),  im48.mean(),  im49.mean()]
+    
+for z in range(49):
+    print("im" + str(z) + " = " + str(y[z]))
 
-plt.plot(x, y, 'o')
-
-plt.xlabel("number of glaph")
-plt.ylabel("average")
-plt.show()
+plt.plot(x, y)
+plt.show
 
 [プログラム説明]
-2-6行目　5枚の画像をそれぞれ読み込む。
-8-12行目　5枚の画像それぞれの平均値をave1~ave5に格納する。
-14行目　xにベクトル(1,2,3,4,5)を格納する。
-15行目　yにベクトル(ave1,ave2,ave3,ave4,ave5)に格納する。
-17行目　横軸をx,縦軸をy年プロットしたグラフを描く。
-19行目　x軸を「number of glaph」と設定する。
-20行目　y軸を「average」と設定する。
-21行目　グラフを表示する。
+2-5行目　環境設定を行う。
+7行目　videoに3秒間撮影した動画(a.mov)を格納する。
+8行目　ディレクトリの名前をscreen_capsとする。
+9,10行目　ディレクトリがなければ新たなディレクトリを作る。
+11~14行目　フレーム数を数え、その数だけ図を書き込む。
+16~65行目　フレームを読み込み、それぞれ格納する。
+67,68行目　x,yの値を設定する。
+70,71行目　pngファイルの輝度値の平均値を出力する。
+73,74行目　グラフをプロットする。
 
 [実行方法]
 jupyternotebookでこのページに示すコードを実装する。その際、Macではcontrol+enterで実装可能となる。
-依存ライブラリはnumpy(version 1.16.4)とmatplotlib(version 2.1.1)である。
+依存ライブラリはnumpy(version 1.16.2)とmatplotlib(version 3.0.3)である。
 
 [参考にしたサイト]
-https://techacademy.jp/magazine/19316　のグラフを描くコードplot()
-http://peaceandhilightandpython.hatenablog.com/entry/2015/12/23/214840　の画像を読み込むコードimread()
-https://www.sejuku.net/blog/67901　の平均値を出力するコードmean()
